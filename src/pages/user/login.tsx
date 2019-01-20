@@ -9,7 +9,7 @@ export default class Login extends Component{
     render(){
         return(
             <View  onClick={this.handleReg}>
-                <text>Resigen</text>
+                <text>Resigen to</text>
             </View>
         )
     }
