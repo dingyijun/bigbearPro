@@ -1,8 +1,8 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro , { Component } from '@tarojs/taro'
 // 引入 Swiper, SwiperItem 组件
 import MySwiper from './main/MySwiper'
 import MyMenuBar from './main/MyMenuBar'
-import { View, Text } from '_@tarojs_components@1.2.7@@tarojs/components/types';
+import { View , Text } from '@tarojs/components';
 import './main.less'
 export default class Main extends Component {
   render () {
