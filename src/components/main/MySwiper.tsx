@@ -5,7 +5,7 @@ export default class MySwiper extends Component {
   render () {
     return (
       <Swiper
-        style='height:200px'
+        style='height:160px'
         indicatorColor='#999'
         indicatorActiveColor='#333'
         circular
