@@ -1,17 +1,24 @@
 import Taro , { Component } from '@tarojs/taro'
 import { AtForm ,AtButton,AtInput } from 'taro-ui'
 import { connect } from '@tarojs/redux';
+import {login} from '../../actions/user'
 
 
-@connect((store)=>({counter:store.counter}))
+
+@connect((store)=>({
+    user:store.user
+}),(dispatch)=>({
+    login:(param)=>{
+        dispatch(login(param))
+    }
+}))
 export default class LoginForm extends Component{
-
     state={
         userName:null,
         userPassword:null
     }
     onSubmit(e){
-        console.log(this.props)
+        this.props.login({userName:this.state.userName})
     }
     handPassleChange(value){
         this.setState({
