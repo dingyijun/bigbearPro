@@ -1,9 +1,9 @@
 import { USER_LOGIN } from '../constants/counter'
 
 let LOGIN_STATE={
-    "status":-1,
-    "message":"init",
-    "data":{}
+    "code":-1,
+    "msg":"init",
+    "info":{}
 }
 
 export const user=(prvsate=LOGIN_STATE,action)=>{
