@@ -26,5 +26,5 @@ export  const getRequest=(param)=>{
             })
             reject(err)
         })
-    }
+    })
 }

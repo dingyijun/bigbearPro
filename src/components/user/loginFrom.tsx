@@ -17,49 +17,49 @@ import { View } from '@tarojs/components';
 class LoginForm extends Component<ILoginFrom>{
     state={
         userInfo:{
-            userName:null,
-            userPassword:null
+            phone:null,
+            passWord:null
         },
         validation:{
-            userName:{v:true,m:''},
-            userPassword:{v:false,m:''}
+            phone:{v:0,m:'必填项'},
+            passWord:{v:0,m:'必填项'}
         }
     }
-    onSubmit(e){
-        this.props.login({userName:this.state.userInfo.userName})
+    onSubmit(){
+        let {phone,passWord}=this.state.userInfo
+        this.props.login({phone,passWord})
     }
     validation=(type,value)=>{
-        let {userName,userPassword}=this.state.validation
+        let {phone,passWord}=this.state.validation
 
         switch(type){
             case 'un':
                 if(value.length<1)
-                    userName={v:false,m:'您并未输入任何内容'}
+                phone={v:-1,m:'您并未输入任何内容'}
                 else
-                    userName={v:true,m:''}
+                phone={v:1,m:''}
             break
             case 'pwd':
                 if(value.length<1)
-                    userPassword={v:false,m:'您并未输入任何内容'}
+                passWord={v:-1,m:'您并未输入任何内容'}
                 else
-                    userPassword={v:true,m:''}
+                passWord={v:1,m:''}
             break
             default:
             break
         }
         this.setState({
             validation:{
-                userName:userName,
-                userPassword:userPassword
+                phone,
+                passWord
             }
         })
-        console.log(this.state)
     }
     handPassleChange(value){
         this.setState({
             userInfo:{
                 ...this.state.userInfo,
-                userPassword:value
+                passWord:value
             }
         })
     }
@@ -67,35 +67,35 @@ class LoginForm extends Component<ILoginFrom>{
         this.setState({
             userInfo:{
                 ...this.state,
-                userName:value
+                phone:value
             }
         })
     }
     render(){
+        let {passWord,phone}=this.state.validation
         return(
             
             <AtForm
         onSubmit={this.onSubmit.bind(this)}
       >
         <AtInput
-          name='userName'
+          name='phone'
           title='账户'
           type='phone'
           placeholder='单行文本'
           onBlur={this.validation.bind(this,'un')}
           onChange={this.handleNameChange.bind(this)}
         />
-        
-        { !this.state.validation.userName.v?<View>{this.state.validation.userName.m}</View>:''}
+        { phone.v===-1?<View>{this.state.validation.phone.m}</View>:''}
         <AtInput
-          name='userPassword'
+          name='passWord'
           title='密码'
           type='password'
           placeholder='单行文本'
           onBlur={this.validation.bind(this,'pwd')}
           onChange={this.handPassleChange.bind(this)}
         />
-        { !this.state.validation.userPassword.v?<View>{this.state.validation.userPassword.m}</View>:''}
+        { passWord.v===-1?<View>{this.state.validation.passWord.m}</View>:''}
         <AtButton formType='submit'>登录</AtButton>
       </AtForm>
         )
