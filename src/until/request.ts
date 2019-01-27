@@ -11,12 +11,15 @@ export  const getRequest=(param)=>{
         }else{
             param.url+='?tkouttime='+tkouttime
         }
+        Taro.showLoading()
         Taro.request(param).then((result)=>{
+            Taro.hideLoading()
             if(result&&result.data&&result.statusCode===200)
                 return resolve(result)
             else
                 throw('网络异常')
         }).catch((err)=>{
+            Taro.hideLoading()
             Taro.showToast({
                 title:err?err:'网络异常',
                 icon:'none'

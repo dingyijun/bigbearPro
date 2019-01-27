@@ -1,8 +1,8 @@
-const APIROOT='http://127.0.0.1/'
+const APIROOT='http://www.bigbear.io/'
 const TOKEN='sssdddff'
 export let apiUrl={
     login:{
-        url:APIROOT+'json.php',
+        url:APIROOT+'user/user/user',
         method:'POST',
         header:{token:TOKEN},
         data:{}
