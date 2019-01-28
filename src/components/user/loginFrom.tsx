@@ -4,8 +4,8 @@ import { AtForm ,AtButton,AtInput } from 'taro-ui'
 import { connect } from '@tarojs/redux';
 import {login} from '../../actions/user'
 import ILoginFrom from '../../interfaces/Iuser'
+import {validators} from '../../until/validator'
 import { View } from '@tarojs/components';
-
 
 @connect((store)=>({
     user:store.user
@@ -72,7 +72,6 @@ class LoginForm extends Component<ILoginFrom>{
         })
     }
     render(){
-        let {passWord,phone}=this.state.validation
         return(
             
             <AtForm
@@ -86,7 +85,8 @@ class LoginForm extends Component<ILoginFrom>{
           onBlur={this.validation.bind(this,'un')}
           onChange={this.handleNameChange.bind(this)}
         />
-        { phone.v===-1?<View>{this.state.validation.phone.m}</View>:''}
+        { console.log(this.state.userInfo.phone)}
+         <View>{validators(this.state.userInfo.phone,'phone','手机号码格式错误')}</View>
         <AtInput
           name='passWord'
           title='密码'
@@ -95,7 +95,7 @@ class LoginForm extends Component<ILoginFrom>{
           onBlur={this.validation.bind(this,'pwd')}
           onChange={this.handPassleChange.bind(this)}
         />
-        { passWord.v===-1?<View>{this.state.validation.passWord.m}</View>:''}
+        {validators(this.state.userInfo.passWord,'phone','密码格式错误')}
         <AtButton formType='submit'>登录</AtButton>
       </AtForm>
         )
