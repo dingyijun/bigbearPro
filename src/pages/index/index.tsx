@@ -1,5 +1,5 @@
 import Taro , { Component , Config } from '@tarojs/taro'
-import Main from '../../components/Main'
+import Main from '../../components/main/Main'
 import Footer from '../../components/Footer'
 import { View } from '@tarojs/components';
 

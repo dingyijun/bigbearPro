@@ -1,16 +1,15 @@
-import Taro, { Component } from '@tarojs/taro'
-import { View } from '@tarojs/components';
+import Taro , { Component , Config } from '@tarojs/taro'
+import LoginFrom from '../../components/user/loginFrom'
 
 export default class Login extends Component{
-    handleReg=()=>{
-        console.log('dsds')
-        Taro.navigateTo({url:'../index/index'})
+
+    config: Config = {
+        navigationBarTitleText: '用户登录'
     }
+    
     render(){
         return(
-            <View  onClick={this.handleReg}>
-                <text>Resigen to</text>
-            </View>
+            <LoginFrom />
         )
     }
 }
