@@ -1,10 +1,21 @@
-const APIROOT='http://127.0.0.1/'
-const TOKEN='sssdddff'
+import Taro from '@tarojs/taro'
+const APIROOT='http://test.mangotmall.com/api/'
+
+let urlInfo={
+    url:'',
+    method:'GET',
+    header:{
+        MG_code:'5uwPulFblsIANI7BIP#a%bBo582#wOud3v%f0c1JgJRskqUTN7y4&TPUTgjkmhOjZI#oVc4Ph4Ar^ApQFy$ZlGl3T9MaIskgGWTVjqHxsP^8S^%gY#nAj9X4DV9x&b7O',
+        MG_key:'5b10fed636fcf',
+        MG_token:Taro.getStorageSync('big_token')
+    },
+    data:{}
+}
+
 export let apiUrl={
     login:{
-        url:APIROOT+'json.php',
+        ...urlInfo,
+        url:APIROOT+'User/login.html',
         method:'POST',
-        header:{token:TOKEN},
-        data:{}
     }
 }
