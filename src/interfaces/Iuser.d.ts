@@ -1,12 +1,11 @@
 
 type backInfo={
-    getInfo:{
-        status:number,
+        phone:string,
+        passWord:string,
         message:string,
-        data:object
-    }
+        code:number
 }
 export default interface ILoginFrom{
-    user:backInfo|undefined
+    user:backInfo
     login:(param:object)=>void
 }
