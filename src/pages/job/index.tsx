@@ -1,12 +1,12 @@
 import Taro , { Component , Config } from '@tarojs/taro'
-import Main from '../../components/main/Main'
 import { View } from '@tarojs/components'
 
-export default class IndexC extends Component{
+export default class JobC extends Component{
+
   render () {
     return (
       <View>
-        <Main />
+        找工作
       </View>
     )
   }
