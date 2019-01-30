@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "bigbearpro",
   "description": "bigbear school and company",
-  "appid": "touristappid",
+  "appid": "wx9ccd90091878c797",
   "setting": {
     "urlCheck": true,
     "es6": false,

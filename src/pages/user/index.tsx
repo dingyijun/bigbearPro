@@ -1,12 +1,16 @@
 import Taro , { Component , Config } from '@tarojs/taro'
-import Main from '../../components/main/Main'
 import { View } from '@tarojs/components'
 
-export default class IndexC extends Component{
+export default class UserC extends Component{
+
+  config: Config = {
+    navigationBarTitleText: '我的'
+  }
+
   render () {
     return (
       <View>
-        <Main />
+        我的
       </View>
     )
   }
