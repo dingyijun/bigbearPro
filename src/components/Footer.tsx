@@ -1,13 +1,14 @@
-import Taro from '@tarojs/taro'
+import Taro,{Component} from '@tarojs/taro'
 import { AtTabBar }  from 'taro-ui'
+import Ifooter from '../interfaces/Iindex'
 
-export default class Footer extends Taro.Component{
-
+export default class Footer extends Component<Ifooter>{
   handleClick (value:number) {
     this.props.onChangePage(value)
   }
   render () {
-    const { current }:number = this.props
+    const {current} = this.props
+    
     return (
       <AtTabBar
         fixed

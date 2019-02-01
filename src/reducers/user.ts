@@ -12,6 +12,7 @@ export const user=(prvsate=LOGIN_STATE,action)=>{
         case USER_LOGIN:
             if(action.data.code===0){
                 Taro.setStorageSync('big_token', action.data.result.token)
+                Taro.setStorageSync('big_userinfo', action.data.result.userinfo)
             }else{
                 Taro.showToast({title:action.data.message,icon:'none'})
             }

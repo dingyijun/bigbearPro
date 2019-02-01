@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro'
-const APIROOT='http://test.mangotmall.com/api/'
+const APIROOT='https://proapi.dhxhr.com/api/'
 
 let urlInfo={
     url:'',

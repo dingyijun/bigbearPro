@@ -3,10 +3,6 @@ import { View } from '@tarojs/components'
 
 export default class UserC extends Component{
 
-  config: Config = {
-    navigationBarTitleText: '我的'
-  }
-
   render () {
     return (
       <View>

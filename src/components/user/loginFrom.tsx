@@ -22,7 +22,6 @@ class LoginForm extends Component<ILoginFrom>{
     }
     onSubmit(e){
         e.preventDefault()
-        console.log(1)
         let {passWord,phone}=this.state
         validator.rules.phone(phone,'账号：为11位手机号码')&&
         validator.rules.min(passWord,6,'密码：不能少于6位')&&
