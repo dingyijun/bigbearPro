@@ -16,8 +16,7 @@ export default class Myapp extends Component{
     constructor(){
         super(...arguments)
         this.state={
-            current:0,
-            userInfo:''
+            current:0
         }
     }
 
@@ -31,22 +30,14 @@ export default class Myapp extends Component{
               })
         })
     }
-
-    componentWillMount(){
-        this.setState({
-            userInfo:Taro.getStorageSync('big_userinfo')
-        })
-    }
-
     render () {
         let {current,userInfo}=this.state
-        console.log(userInfo)
         return (
         <View>
             { current===0?<IndexC/>:'' }
             { current===1?<JobC/>:'' }
             { current===2?<HrC/>:'' }
-            { current===3?<ManageC userInfo={userInfo}/>:'' }
+            { current===3?<ManageC />:'' }
             { current===4?<UserC/>:'' }
             <Footer current={current} onChangePage={this.handelChange.bind(this)}/>
         </View>

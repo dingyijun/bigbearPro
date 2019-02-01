@@ -1,2 +1,2 @@
 export const USER_LOGIN = 'login'
-export const MINUS = 'MINUS'
+export const USER_LOGIN_SUCCESS = 'loginSuccess'
