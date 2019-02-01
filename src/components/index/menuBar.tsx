@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { AtGrid } from "taro-ui"
 export default class MyMenuBar extends Component {
     handleClick=()=>{
-        Taro.navigateTo({url:'../user/login'})
+        Taro.navigateTo({url:'./pages/user/login'})
     }
     render(){
         return (
