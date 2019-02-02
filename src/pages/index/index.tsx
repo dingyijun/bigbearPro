@@ -9,6 +9,15 @@ export default class IndexC extends Component{
       <View>
         <MyMenuBar />
         <MySwiper />
+        <MySwiper />
+        <MySwiper />
+        <MySwiper />
+        <MySwiper />
+        <MySwiper />
+        <MySwiper />
+        <MySwiper />
+        <MySwiper />
+        <MySwiper />
       </View>
     )
   }

@@ -13,7 +13,7 @@ export default class UserC extends Component{
     return (
       <View>
         {this.props.userInfo.phone}
-        <Text onClick={this.login.bind(this)}>登录</Text>
+        <Text onClick={this.login.bind(this)}></Text>
       </View>
     )
   }

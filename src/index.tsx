@@ -6,6 +6,7 @@ import JobC from './pages/job/index'
 import UserC from './pages/user/index'
 import ManageC from './pages/manage/index'
 import { View } from '@tarojs/components'
+import './index.less'
 
 export default class Myapp extends Component{
     
@@ -33,7 +34,7 @@ export default class Myapp extends Component{
     render () {
         let {current,userInfo}=this.state
         return (
-        <View>
+        <View className='my_index'>
             { current===0?<IndexC/>:'' }
             { current===1?<JobC/>:'' }
             { current===2?<HrC/>:'' }
