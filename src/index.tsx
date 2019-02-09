@@ -8,17 +8,13 @@ import ManageC from './pages/manage/index'
 import { View } from '@tarojs/components'
 
 export default class Myapp extends Component{
+    state={
+        current:0,
+        userInfo:''
+    }
     
     config: Config = {
         navigationBarTitleText:'灰熊先生'
-    }
-
-    constructor(){
-        super(...arguments)
-        this.state={
-            current:0,
-            userInfo:''
-        }
     }
 
     handelChange=(num:number)=>{
@@ -40,7 +36,6 @@ export default class Myapp extends Component{
 
     render () {
         let {current,userInfo}=this.state
-        console.log(userInfo)
         return (
         <View>
             { current===0?<IndexC/>:'' }

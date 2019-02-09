@@ -18,7 +18,7 @@ let urlInfo={
 export let apiUrl={
     login:{
         ...urlInfo,
-        url:APIROOT+'User/login.html',
+        url:APIROOT+'User/login',
         method:'POST',
     }
 }
