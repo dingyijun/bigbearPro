@@ -1,4 +1,5 @@
 
 export default interface Imanage{
-    userInfo:any
+    userInfo:any,
+    token:string
 }

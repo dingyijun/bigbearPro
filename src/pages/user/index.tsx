@@ -1,12 +1,19 @@
 import Taro , { Component , Config } from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View,Text } from '@tarojs/components'
+import { connect } from '@tarojs/redux';
 
+@connect((store)=>({
+  ...store.user
+}))
 export default class UserC extends Component{
-
+  componentDidMount(){
+    if(!this.props.token || !this.props.userInfo)Taro.navigateTo({url:'./pages/user/login'})
+  }
   render () {
     return (
       <View>
-        我的
+        {this.props.userInfo.phone}
+        <Text onClick={this.login.bind(this)}></Text>
       </View>
     )
   }
