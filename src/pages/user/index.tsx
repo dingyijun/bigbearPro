@@ -1,20 +1,22 @@
-import Taro , { Component , Config } from '@tarojs/taro'
+import Taro , { Component } from '@tarojs/taro'
 import { View,Text } from '@tarojs/components'
-import { connect } from '@tarojs/redux';
-
+import { connect } from '@tarojs/redux'
+import LoginFrom from '../../components/user/loginFrom'
+import Logout from '../../components/user/logout'
+import './index.less'
 @connect((store)=>({
   ...store.user
 }))
 export default class UserC extends Component{
-  componentDidMount(){
-    if(!this.props.token || !this.props.userInfo)Taro.navigateTo({url:'./pages/user/login'})
-  }
   render () {
-    return (
-      <View>
-        {this.props.userInfo.phone}
-        <Text onClick={this.login.bind(this)}></Text>
-      </View>
-    )
+      if(!this.props.token){
+        return (<LoginFrom />)
+      }
+      return (
+        <View className='manage'>
+        {Taro.getStorageSync('big_token')}
+          <Logout/>
+        </View>
+      )
   }
 }

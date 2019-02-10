@@ -1,6 +1,14 @@
 import Taro from '@tarojs/taro'
 
 export  const getRequest=(param)=>{
+    param={
+        ...param,
+        header:{
+            ...param.header,
+            'MG_token':Taro.getStorageSync('big_token')
+        }
+    }
+    console.log(param)
     const tkouttime = new Date().getTime();
     return new Promise((resolve, reject) => {
         if(param.method==='GET'){

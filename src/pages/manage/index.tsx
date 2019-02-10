@@ -1,22 +1,26 @@
+import {ComponentClass} from 'react'
 import Taro , { Component } from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View ,} from '@tarojs/components'
 import Imanage from '../../interfaces/Imanage'
-import { connect } from '@tarojs/redux';
-import  Msgbox  from '../../components/public/msgbox'
+import { connect } from '@tarojs/redux'
+import LoginFrom from '../../components/user/loginFrom'
+import Logout from '../../components/user/logout'
 
 @connect((store)=>({
   ...store.user
 }))
-export default class ManageC extends Component<Imanage>{
+class ManageC extends Component<Imanage>{
  
   render () {
-    const {token,userInfo}=this.props
+    if(!this.props.token){
+      return (<LoginFrom />)
+    }
     return (
-      <View>
-        <Msgbox />
-        管理
-        {token&&userInfo?'':<View>dfdfs</View>}
+      <View className='manage'>
+        <Logout/>
       </View>
     )
   }
 }
+
+export default ManageC as ComponentClass

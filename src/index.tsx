@@ -11,7 +11,6 @@ import './index.less'
 export default class Myapp extends Component{
     state={
         current:0,
-        userInfo:''
     }
     
     config: Config = {
@@ -29,7 +28,7 @@ export default class Myapp extends Component{
         })
     }
     render () {
-        let {current,userInfo}=this.state
+        let {current}=this.state
         return (
         <View className='my_index'>
             { current===0?<IndexC/>:'' }

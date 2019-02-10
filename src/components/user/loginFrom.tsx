@@ -1,6 +1,6 @@
 import {ComponentClass} from 'react'
 import Taro , { Component } from '@tarojs/taro'
-import { AtForm ,AtButton,AtInput } from 'taro-ui'
+import { AtButton,AtInput } from 'taro-ui'
 import { connect } from '@tarojs/redux';
 import {login} from '../../actions/user'
 import ILoginFrom from '../../interfaces/Iuser'
@@ -17,7 +17,7 @@ import { View } from '@tarojs/components';
 }))
 class LoginForm extends Component<ILoginFrom>{
     state={
-        phone:'',
+        phone:this.props.user.userInfo.phone,
         passWord:''
     }
     onSubmit(e){
@@ -29,7 +29,7 @@ class LoginForm extends Component<ILoginFrom>{
         this.todoLogin()
     }
     
-    todoLogin=(){
+    todoLogin=()=>{
         let {passWord,phone}=this.state
         if(this.props.user.phone === phone && this.props.user.passWord === passWord && this.props.user.code === -1){
             Taro.showToast({title:this.props.user.message,icon:'none'})
@@ -54,7 +54,7 @@ class LoginForm extends Component<ILoginFrom>{
     render(){
         let {phone,passWord}=this.state
         return(
-            <View>
+            <View className='login_from'>
                 <AtInput
                 name='phone'
                 title='账户'
@@ -71,7 +71,7 @@ class LoginForm extends Component<ILoginFrom>{
                 value={passWord}
                 onChange={this.handPassleChange.bind(this)}
                 />
-                <AtButton onClick={this.onSubmit.bind(this)}>登录</AtButton>
+                <AtButton type='primary' onClick={this.onSubmit.bind(this)}>登录</AtButton>
             </View>
         )
     }
