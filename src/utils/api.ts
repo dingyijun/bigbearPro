@@ -1,4 +1,3 @@
-import Taro from '@tarojs/taro'
 const APIROOT='https://proapi.dhxhr.com/api/'
 
 let urlInfo={

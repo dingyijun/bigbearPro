@@ -15,26 +15,30 @@ export const user=(prvsate=LOGIN_STATE,action)=>{
                 return {
                     code:action.data.code,
                     message:action.data.message,
+                    passWord:'',
+                    phone:'',
                     userInfo:action.data.result.userinfo,
                     token:action.data.result.token
                 }
-            }else{
+            }else if(action.data.code===-1){
                 Taro.showToast({title:action.data.message,icon:'none'})
-            }
-            return {
-                ...prvsate,
-                ...action.newdata,
-                code:action.data.code,
-                message:action.data.message,
-            }
-        case USER_LOGOUT:
-            if(action.data.code===0){
-                Taro.setStorageSync('big_token', '')
-                //Taro.setStorageSync('big_userinfo', '')
-                
                 return {
                     ...prvsate,
-                    ...action.data,                
+                    ...action.newdata,
+                    code:action.data.code,
+                    message:action.data.message,
+                }
+            }
+            return prvsate
+        case USER_LOGOUT:
+            if(action.data.code===0 || action.data.code===-9){
+                Taro.removeStorage({
+                    key:'big_token'
+                })
+                return {
+                    ...prvsate,
+                    code:action.data.code,
+                    message:action.data.message,
                     passWord:'',
                     phone:'',
                     token:''
