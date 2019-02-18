@@ -1,4 +1,4 @@
-const APIROOT='https://proapi.dhxhr.com/api/'
+const APIROOT='https://proapi.dhxhr.com/'
 
 let urlInfo={
     url:'',
@@ -15,11 +15,11 @@ let urlInfo={
 export let apiUrl={
     login:{
         ...urlInfo,
-        url:APIROOT+'User/login',
+        url:APIROOT+'users/user/login',
         method:'POST',
     },
     logout:{
         ...urlInfo,
-        url:APIROOT+'User/logout'
+        url:APIROOT+'users/user/logout'
     }
 }
