@@ -1,4 +1,4 @@
-import Taro , { Component } from '@tarojs/taro'
+import Taro , { Component , Config} from '@tarojs/taro'
 import { View,Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import LoginFrom from '../../components/user/loginFrom'
@@ -8,7 +8,11 @@ import './index.less'
   ...store.user
 }))
 export default class UserC extends Component{
+  config: Config = {
+    navigationBarTitleText:'用户中心'
+  }
   render () {
+      Taro.showTabBarRedDot({index:4})
       if(!this.props.token){
         return (<LoginFrom />)
       }

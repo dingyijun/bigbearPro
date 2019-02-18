@@ -1,19 +1,22 @@
 import {ComponentClass} from 'react'
-import Taro , { Component } from '@tarojs/taro'
+import Taro , { Component , Config } from '@tarojs/taro'
 import { View ,} from '@tarojs/components'
 import Imanage from '../../interfaces/Imanage'
 import { connect } from '@tarojs/redux'
-import LoginFrom from '../../components/user/loginFrom'
+import NeedLogin from '../../components/public/needLogin'
 import Company from '../../components/manage/company';
 
 @connect((store)=>({
   ...store.user
 }))
 class ManageC extends Component<Imanage>{
- 
+  config: Config = {
+    navigationBarTitleText:'管理项'
+  }
   render () {
+    Taro.setTabBarBadge({index:3,text:'99'})
     if(!this.props.token){
-      return (<LoginFrom />)
+      return (<NeedLogin />)
     }
     return (
       <View className='manage'>

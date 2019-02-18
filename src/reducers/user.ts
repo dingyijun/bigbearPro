@@ -11,7 +11,7 @@ export const user=(prvsate=LOGIN_STATE,action)=>{
             if(action.data.code===0){
                 Taro.setStorageSync('big_token', action.data.result.token)
                 Taro.setStorageSync('big_userinfo', action.data.result.userinfo)
-                //Taro.navigateBack({delta: 1})
+                Taro.navigateBack({delta: 1})
                 return {
                     code:action.data.code,
                     message:action.data.message,

@@ -27,15 +27,50 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'index',
+      'pages/index/index',
+      'pages/hr/index',
+      'pages/job/index',
+      'pages/manage/index',
+      'pages/user/index',
       'pages/user/login'
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
+      navigationBarBackgroundColor: '#13a07c',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
+      navigationBarTextStyle: 'white'
+    },
+    "tabBar": {
+        "color": "#a9b7b7",
+        "selectedColor": "#11cd6e",
+        "borderStyle": 'white',
+      "list": [{
+        "selectedIconPath": "asset/indexa.png",
+        "iconPath": "asset/index.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },{
+        "selectedIconPath": "asset/joba.png",  
+        "iconPath": "asset/job.png",  
+        "pagePath": "pages/hr/index",  
+        "text": "求职"
+      },{
+        "selectedIconPath": "asset/hra.png",
+        "iconPath": "asset/hr.png",
+        "pagePath": "pages/job/index",
+        "text": "招聘"
+      },{
+        "selectedIconPath": "asset/managea.png",
+        "iconPath": "asset/manage.png",
+        "pagePath": "pages/manage/index",
+        "text": "管理"
+      },{
+        "selectedIconPath": "asset/usera.png",
+        "iconPath": "asset/user.png",
+        "pagePath": "pages/user/index",
+        "text": "我的"
+      }]
+    } 
   }
 
   componentDidMount () {}
@@ -51,6 +86,7 @@ class App extends Component {
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
   render () {
+    
     return (
       <Provider store={store}>
         <Index /> 

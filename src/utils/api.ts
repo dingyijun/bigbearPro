@@ -20,6 +20,7 @@ export let apiUrl={
     },
     logout:{
         ...urlInfo,
-        url:APIROOT+'users/user/logout'
+        url:APIROOT+'users/user/logout',
+        method:'POST',
     }
 }

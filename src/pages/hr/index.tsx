@@ -2,6 +2,9 @@ import Taro , { Component , Config } from '@tarojs/taro'
 import { View,Button } from '@tarojs/components';
 
 export default class HrC extends Component{
+  config: Config = {
+    navigationBarTitleText:'找工作'
+  }
   handleLogin=()=>{
     console.log(1)
     Taro.login({
