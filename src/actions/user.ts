@@ -4,7 +4,7 @@ import { apiUrl } from '../utils/api'
 
 export function login(param){
     return async (dispatch)=>{
-      let result:any =await getRequest({...apiUrl.login,data:{...param,deviceId:'weapp'})
+      let result:any =await getRequest({...apiUrl.login,data:{...param,deviceId:'weapp'}})
       return dispatch({
         type:USER_LOGIN,
         data:result.data,
@@ -15,7 +15,7 @@ export function login(param){
 
 export function logout(){
   return async (dispatch)=>{
-    let result:any =await getRequest({...apiUrl.logout,data:{})
+    let result:any =await getRequest({...apiUrl.logout,data:{}})
     return dispatch({
       type:USER_LOGOUT,
       data:result.data
