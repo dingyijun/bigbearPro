@@ -4,7 +4,8 @@ import { View ,} from '@tarojs/components'
 import Imanage from '../../interfaces/Imanage'
 import { connect } from '@tarojs/redux'
 import NeedLogin from '../../components/public/needLogin'
-import Company from '../../components/manage/company';
+import Company from '../../components/manage/company'
+import EpSelect from '../../components/manage/epSelect'
 
 @connect((store)=>({
   ...store.user
@@ -20,6 +21,7 @@ class ManageC extends Component<Imanage>{
     }
     return (
       <View className='manage'>
+        <EpSelect/>
         <Company/>
       </View>
     )
