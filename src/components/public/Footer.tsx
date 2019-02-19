@@ -1,6 +1,6 @@
 import Taro,{Component} from '@tarojs/taro'
 import { AtTabBar }  from 'taro-ui'
-import Ifooter from '../interfaces/Iindex'
+import Ifooter from '../../interfaces/Iindex'
 
 export default class Footer extends Component<Ifooter>{
   handleClick (value:number) {

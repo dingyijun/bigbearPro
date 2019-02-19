@@ -20,6 +20,7 @@ export function logout(){
       type:USER_LOGOUT,
       data:result.data
     })
+  }
 }
-}
+
 

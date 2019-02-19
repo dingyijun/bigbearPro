@@ -1,5 +1,5 @@
 import Taro , { Component , Config } from '@tarojs/taro'
-import Footer from './components/Footer'
+import Footer from './components/public/Footer'
 import IndexC from './pages/index/index'
 import HrC from './pages/hr/index'
 import JobC from './pages/job/index'

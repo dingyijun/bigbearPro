@@ -22,5 +22,9 @@ export let apiUrl={
         ...urlInfo,
         url:APIROOT+'users/user/logout',
         method:'POST',
+    },
+    identity:{
+        ...urlInfo,
+        url:APIROOT+'users/identity/user_identity'
     }
 }
